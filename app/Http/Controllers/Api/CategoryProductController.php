@@ -24,6 +24,12 @@ class CategoryProductController extends ApiController
         return $this->showAll($data);
     }
 
+    public function indexAll()
+    {
+        $data = CategoryProduct::all();
+        return $this->showQuery($data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

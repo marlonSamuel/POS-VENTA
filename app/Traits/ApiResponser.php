@@ -39,7 +39,7 @@ trait ApiResponser
 
 	protected function showQuery($query)
 	{
-		return $this->successResponse(['data' =>$query], 200);
+		return $this->successResponse($query, 200);
 	}
 
 	protected function filterData(Collection $collection)

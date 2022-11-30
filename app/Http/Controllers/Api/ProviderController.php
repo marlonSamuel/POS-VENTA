@@ -24,6 +24,12 @@ class ProviderController extends ApiController
         return $this->showAll($data);
     }
 
+    public function indexAll()
+    {
+        $data = Provider::all();
+        return $this->showQuery($data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

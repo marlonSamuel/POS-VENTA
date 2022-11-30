@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('date');
             $table->string('invoice',500);
             $table->decimal('total',11,2);
+            $table->boolean('cancel')->default(false);
             $table->timestamps();
 
             $table->foreign('provider_id')->references('id')->on('providers');

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('raw_material_id');
-            $table->integer('quantity');
+            $table->decimal('quantity',6,2);
+            $table->decimal('cost_price',11,2);
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products');
