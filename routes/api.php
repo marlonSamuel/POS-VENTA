@@ -4,7 +4,9 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProviderController;
 use App\Http\Controllers\Api\RawMaterialController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\api\MovementController;
 use App\Http\Controllers\api\PurcharseController;
+use App\Http\Controllers\api\SaleController;
 use Illuminate\Http\Request;
 
 /*
@@ -34,3 +36,5 @@ Route::resource('productss', ProductController::class, ['except' => ['create', '
 Route::post('productss-update', [ProductController::class, '_update']);
 Route::post('productss-add-or-decrease', [ProductController::class, 'addOrDecreaseStock']);
 Route::resource('purchases', PurcharseController::class, ['except' => ['create', 'edit','update']]);
+Route::resource('sales', SaleController::class, ['except' => ['create', 'edit','update']]);
+Route::resource('movements', MovementController::class, ['except' => ['create', 'edit']]);

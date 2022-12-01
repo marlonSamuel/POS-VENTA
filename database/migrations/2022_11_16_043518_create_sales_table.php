@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('total',11,2);
             $table->boolean('discounted')->default(false);
             $table->string('discount_reason')->nullable();
+            $tabel->boolean('cancel')->default(false);
             $table->timestamps();
         });
     }
