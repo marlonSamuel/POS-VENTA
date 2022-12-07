@@ -42,7 +42,7 @@ class PurcharseController extends ApiController
             'provider_id'=>'required',
             'description' => 'required',
             'total' => 'required',
-            'invoice' => 'required|mimes:png,jpg,jpeg,webp',
+            'invoice' => 'required|mimes:png,jpg,jpeg,webp,pdf',
             'detail' => 'required'
         ]);
 
