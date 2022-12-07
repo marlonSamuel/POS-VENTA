@@ -17,7 +17,8 @@ class Purchase extends Model
         "total",
         "description",
         "invoice",
-        "date"
+        "date",
+        "cancel"
     ];
 
     public function provider()

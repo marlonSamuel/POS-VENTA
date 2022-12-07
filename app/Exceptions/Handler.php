@@ -93,7 +93,7 @@ class Handler extends ExceptionHandler
                 return redirect()->back()->withInput($request->input());
             }
 
-            //dd($exception);
+            dd($exception);
             return $this->errorResponse($exception->getMessage(), 500);
             return $this->errorResponse('Falla inesperada. Intente luego', 500);
         });
