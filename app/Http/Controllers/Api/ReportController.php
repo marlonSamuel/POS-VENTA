@@ -92,16 +92,23 @@ class ReportController extends ApiController
                     ->whereBetween('date', [$request->from, $request->to])
                     ->first();
 
-        $movements = DB::table('movements')
-                    ->select('movement_type',DB::raw('count(*) as quantity'),DB::raw('COALESCE(sum(price),0) as total'))
+        $incomes = DB::table('movements')
+                    ->select(DB::raw('count(*) as quantity'),DB::raw('COALESCE(sum(price),0) as total'))
                     ->whereBetween('date', [$request->from, $request->to])
-                    ->groupBy('movement_type')
-                    ->get();
+                    ->where('movement_type','i')
+                    ->first();
+
+        $outcomes = DB::table('movements')
+                    ->select(DB::raw('count(*) as quantity'),DB::raw('COALESCE(sum(price),0) as total'))
+                    ->whereBetween('date', [$request->from, $request->to])
+                    ->where('movement_type','o')
+                    ->first();
 
         $response = [
             "sales" => $sales,
             "purchases" => $purchases,
-            "movements" => $movements
+            "incomes" => $incomes,
+            "outcomes" => $outcomes
         ];
 
         return $this->showQuery($response,201);
