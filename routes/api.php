@@ -6,9 +6,9 @@ use App\Http\Controllers\Api\ProviderController;
 use App\Http\Controllers\Api\RawMaterialController;
 use App\Http\Controllers\Api\ReportController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\api\MovementController;
-use App\Http\Controllers\api\PurcharseController;
-use App\Http\Controllers\api\SaleController;
+use App\Http\Controllers\Api\MovementController;
+use App\Http\Controllers\Api\PurcharseController;
+use App\Http\Controllers\Api\SaleController;
 use Illuminate\Http\Request;
 
 /*
