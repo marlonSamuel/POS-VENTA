@@ -110,6 +110,7 @@ class ReportController extends ApiController
             "incomes" => $incomes,
             "outcomes" => $outcomes
         ];
+        
 
         return $this->showQuery($response,201);
 
